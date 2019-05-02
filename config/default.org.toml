@@ -1,0 +1,93 @@
+# 配置文件
+
+### [alerter]
+### 
+### 预警配置
+###
+[alerter]
+  # 要检测的交易所
+  # ["binance", "huobi", "okex"]
+  exchanges = ["binance", "huobi", "okex"]
+
+###
+### [binance]
+### 
+### 币安交易所配置
+###
+[binance]
+  # 是否检测全部交易对, 设置为true时，pairs配置项将被无视
+  allPairs = false
+  # 检测商品 ["BTCUSDT", "ETHBTC", "BATUSDT"]
+  pairs = ["BTCUSDT", "BATUSDT", "ZRXUSDT"]
+  # 检测周期
+  # ["1m", "3m", "5m", "15m", "30m", "1h", "2h", "4h", "6h", "8h", "12h", "1d"]
+  periods = ["1h"]
+  # 电报接收者id 618723798
+  # robot -374948948 币安_信号
+  chatId = -374948948
+
+  [binance.macd]
+    [binance.macd.period]
+      fast = 12
+      slow = 26
+      signal = 9
+
+###
+### [huobi]
+### 
+### 火币交易所配置
+###
+[huobi]
+  # 访问apikey
+  accessKey = "fff-xxx-ssss-kkk"
+  # 是否检测全部交易对, 设置为true时，pairs配置项将被无视
+  allPairs = false
+  # 检测商品
+  pairs = ["btcusdt", "zrxusdt", "reneth"]
+  # 检测周期
+  # ["1min", "5min", "15min", "30min", "60min", "1day"]
+  periods = ["60min"]
+  # 电报接收者id 618723798
+  # robot -339990237 火币_信号
+  chatId = -339990237
+
+  [huobi.macd]
+    [huobi.macd.period]
+      fast = 12
+      slow = 26
+      signal = 9
+
+###
+### [okex]
+### 
+### 火币交易所配置
+###
+[okex]
+  # 是否检测全部交易对, 设置为true时，pairs配置项将被无视
+  allPairs = false
+  # 检测商品
+  pairs = ["BTC-USDT", "TCT-USDT", "INS-USDT", "ZRX-USDT"]
+  # 检测周期
+  # 含义：
+  # min = '60',
+  # min3 = '180',
+  # min5 = '300',
+  # min15 = '900',
+  # min30 = '1800',
+  # hour = '3600',
+  # hour2 = '7200',
+  # hour4 = '14400',
+  # hour6 = '21600',
+  # hour12 = '43200',
+  # day = '86400',
+  # week = '604800',
+  periods = ["3600"]
+  # 电报接收者id 618723798
+  # robot -355280649 OK_信号
+  chatId = -355280649
+
+  [okex.macd]
+    [okex.macd.period]
+      fast = 12
+      slow = 26
+      signal = 9
